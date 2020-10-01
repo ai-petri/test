@@ -1,0 +1,93 @@
+
+            :host
+            {
+                min-height: 750px;
+            }
+            #menu
+            {
+                display: flex;
+                justify-content: center;    
+            }
+            #menu>a
+            {
+                text-decoration: none;
+                margin: 40px 30px;
+                font-size: 20px;
+                color: var(--grey);
+            }
+            #menu2
+            {
+                display: none;
+                padding: 40px 30px;
+            }
+            #menu2>a
+            {
+                text-decoration: none;
+                font-size: 20px;
+            }
+
+            .line
+            {
+                width: max(93vw, 600px);
+                height: 1px;
+                margin: 0;
+            }
+            .centered
+            {
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+
+            #scroll-down
+            {
+                position: absolute;
+                bottom: 110px;
+                width: 100%;
+                font-size: 12px;
+                color: var(--grey);                           
+            }
+            #scroll-down *
+            {
+                text-align: center;
+                 
+            }
+           
+
+            :host(#home)  *
+            {
+                color: white;
+                fill: white;
+            }
+
+            @media screen and (max-width: 1200px) 
+            {
+                #scroll-down
+                {
+                    display: none;
+                }
+                .line
+                {
+                    width: 100%;
+                }
+            }
+            @media screen and (max-width: 650px) 
+            {
+                #menu,  .line
+                {display: none;}
+
+                :host
+                {
+                    min-height: 250px;
+                }
+
+                :host(#home) #menu2
+                {
+                    display: flex;
+                    
+                }
+               
+
+            }
+
