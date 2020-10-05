@@ -19,9 +19,9 @@
                 display: flex;
                 justify-content: center;    
             }
-            .menu>span
+            .menu>a
             {
-                cursor: pointer;
+                text-decoration: none;
                 margin: 40px 30px;
                 font-size: 20px;
                 color: var(--grey);
