@@ -6,82 +6,15 @@
     <title>Jason Wood</title>  
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" > 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <style>
-    :root
-    {
-        --grey: rgb(190,190,190);
-        --dark-grey: rgb(32,32,32);
-    }
-    body
-    {
-        margin: 0;
-        font-family: 'PT Sans', sans-serif;
-        fill: var(--grey);
-    }
-    h2
-    {
-        font-size: 50px;
-    }
-    
-    #home
-    {
-        background-image: url("assets/background.jpg");
-        background-repeat: no-repeat;
-        background-position: top;
-        background-size: 1920px auto;
-        color: white;
-        fill: white;
-    }
-    .content
-    {
-        display: grid;
-        grid-template-columns: 40vw 30vw;
-        grid-template-rows: auto;
-        height: auto;
-        margin: 68px auto;
-        gap: 5vw;
-        width: 84vw;
-        font-family:'PT Sans', sans-serif;
-        color: var(--dark-grey);
-        padding-bottom: 300px;
-    }
-    .content p
-    {
-        line-height: 2;
-    }
-    @media screen and (max-width: 1200px) 
-    {
-        .content
-        {
-            display: block;
-            width: 100%;
-            margin: 0;
-        }
-        .content :not(img)
-        {
-            margin: 3vw;
-        }
-    }
-    @media screen and (max-width: 650px) 
-    {
-        h2
-        {
-            font-size: 24px;
-        }
-        .content img
-        {
-            width: 650px;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    }
+   
 </style>
 
-<custom-section id="home" class="white">
+<!-- <custom-section id="home" class="white">
     <span slot="scroll-text">SCROLL DOWN TO SEE MORE</span>
 </custom-section>
 <custom-section id="about-me">
@@ -98,9 +31,9 @@
     </div>
     
     <span slot="scroll-text">KEEP SCROLLING, THERE IS STILL MORE TO COME</span>
-</custom-section>
+</custom-section> -->
 
-
+<div id="root"></div>
 
 
 
@@ -137,7 +70,8 @@
     
 </template>
 
-<script>
+<script src="main.js"></script>
+<!-- <script>
   class CustomSection extends HTMLElement
   {
       constructor()
@@ -161,7 +95,7 @@
   }
     
 customElements.define("custom-section",CustomSection);
-</script>
+</script> -->
 
 </body>
 </html>

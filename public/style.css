@@ -1,26 +1,37 @@
-
-            :host
+            :root
             {
-                min-height: 750px;
+                --grey: rgb(190,190,190);
+                --dark-grey: rgb(32,32,32);
             }
-            #menu
+            body
+            {
+                margin: 0;
+                font-family: 'PT Sans', sans-serif;
+                fill: var(--grey);
+            }
+            h2
+            {
+                font-size: 50px;
+            }
+            
+            .menu
             {
                 display: flex;
                 justify-content: center;    
             }
-            #menu>a
+            .menu>span
             {
-                text-decoration: none;
+                cursor: pointer;
                 margin: 40px 30px;
                 font-size: 20px;
                 color: var(--grey);
             }
-            #menu2
+            .menu2
             {
                 display: none;
                 padding: 40px 30px;
             }
-            #menu2>a
+            .menu2>a
             {
                 text-decoration: none;
                 font-size: 20px;
@@ -32,6 +43,45 @@
                 height: 1px;
                 margin: 0;
             }
+
+            
+
+            .section
+            { 
+                position: relative;
+                min-height: 750px;
+            }
+            .home
+            {
+                background-image: url("assets/background.jpg");
+                background-repeat: no-repeat;
+                background-position: top;
+                background-size: 1920px auto;
+                color: white;
+                fill: white;
+            }
+
+            .content
+            {
+                display: grid;
+                grid-template-columns: 40vw 30vw;
+                grid-template-rows: auto;
+                height: auto;
+                margin: 68px auto;
+                gap: 5vw;
+                width: 84vw;
+                font-family:'PT Sans', sans-serif;
+                color: var(--dark-grey);
+                padding-bottom: 300px;
+            }
+            .content p
+            {
+                line-height: 2;
+            }
+            
+
+
+
             .centered
             {
                 position: relative;
@@ -40,7 +90,7 @@
             }
             
 
-            #scroll-down
+            .scroll-down
             {
                 position: absolute;
                 bottom: 110px;
@@ -48,36 +98,57 @@
                 font-size: 12px;
                 color: var(--grey);                           
             }
-            #scroll-down *
+            .scroll-down *
             {
                 text-align: center;
                  
             }
            
-
-            :host(#home)  *
-            {
-                color: white;
-                fill: white;
-            }
-
             @media screen and (max-width: 1200px) 
             {
-                #scroll-down
+                .content
                 {
-                    display: none;
+                    display: block;
+                    width: 100%;
+                    margin: 0;
                 }
+                .content :not(img)
+                {
+                    margin: 3vw;
+                }
+            }
+            @media screen and (max-width: 650px) 
+            {
+                h2
+                {
+                    font-size: 24px;
+                }
+                .content img
+                {
+                    width: 650px;
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+
+ 
+            @media screen and (max-width: 1200px) 
+            {
                 .line
                 {
                     width: 100%;
                 }
             }
+
+            /*
             @media screen and (max-width: 650px) 
             {
-                #menu,  .line
+                .menu,  .line
                 {display: none;}
 
-                :host
+                 :host
                 {
                     min-height: 250px;
                 }
@@ -87,7 +158,8 @@
                     display: flex;
                     
                 }
-               
+                 
 
             }
+            */
 
