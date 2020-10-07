@@ -10,7 +10,7 @@ function App()
         <Section n={1} className="home"/> 
         <Section n={2}>
         
-            <img  src="assets/Jason_Wood.jpg" alt="Jason Wood" width="100%"/>
+            <img  src="images/Jason_Wood.jpg" alt="Jason Wood" width="100%"/>
             <div>
             <h2>ABOUT ME</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

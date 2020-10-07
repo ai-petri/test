@@ -48,7 +48,7 @@ function Menu(props)
 
 
     return <>  
-        <nav style={navStyle}>{menu}</nav>
+        <nav className="menu" style={navStyle}>{menu}</nav>
         <svg style={{
             position: "relative",
             left: "50%",

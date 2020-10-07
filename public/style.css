@@ -3,6 +3,13 @@
                 --grey: rgb(190,190,190);
                 --dark-grey: rgb(32,32,32);
             }
+
+            @font-face
+            {
+                font-family: 'NexaLight';
+                src:url('fonts/NexaLight.ttf.woff') format('woff');
+            }
+
             body
             {
                 margin: 0;
@@ -21,9 +28,13 @@
                 position: relative;
                 min-height: 750px;
             }
+            .menu
+            {
+                font-family: 'NexaLight';
+            }
             .home
             {
-                background-image: url("assets/background.jpg");
+                background-image: url("images/background.jpg");
                 background-repeat: no-repeat;
                 background-position: top;
                 background-size: 1920px auto;
@@ -31,6 +42,10 @@
                 fill: white;
             }
 
+            .home .menu
+            {
+                font-family: 'PT Sans', sans-serif;
+            }
             .content
             {
                 display: grid;
@@ -61,17 +76,10 @@
 
             .scroll-down
             {
-                position: absolute;
-                bottom: 110px;
-                width: 100%;
+                font-family: 'OpenSans', sans-serif;
                 font-size: 12px;
-                color: var(--grey);                           
             }
-            .scroll-down *
-            {
-                text-align: center;
-                 
-            }
+
            
             @media screen and (max-width: 1200px) 
             {
