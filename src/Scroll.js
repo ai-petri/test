@@ -21,7 +21,7 @@ function Scroll(props)
         }}>
         {props.n%2? "SCROLL DOWN TO SEE MORE": "KEEP SCROLLING, THERE IS STILL MORE TO COME"}
      </div>
-     <svg width="31" height="31" 
+     <svg className="scroll-down" width="31" height="31" 
         onClick={()=>{goTo(props.n + 1)}} 
         style={{
             textAlign:"center",

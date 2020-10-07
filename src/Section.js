@@ -6,8 +6,9 @@ import Scroll from "./Scroll"
 
 function Section(props)
 {
-    return <div id={props.n} className={"section " + props.className} >
+    return <div id={props.n} className={"section " + (props.className || "")} >
     <Menu n={props.n}/>
+    <div className="line"/>
     <div className="content">
         {props.children}
     </div>

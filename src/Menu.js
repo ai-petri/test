@@ -47,19 +47,8 @@ function Menu(props)
     var navStyle = width>600? navStyle1 : navStyle2;
 
 
-    return <>  
-        <nav className="menu" style={navStyle}>{menu}</nav>
-        <svg style={{
-            position: "relative",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "max(93vw, 600px)",
-            height: "1px",
-            margin: "0"
-        }}>
-            <rect width="100%" height="1"/>
-        </svg>
-    </>
+    return <nav className="menu" style={navStyle}>{menu}</nav>
+
 }
 
 export default Menu;
