@@ -13,9 +13,7 @@
             body
             {
                 margin: 0;
-                font-family: 'PT Sans', sans-serif;
-                fill: var(--grey);
-                color: var(--grey);
+                font-family: 'PT Sans', sans-serif;            
             }
             h2
             {
@@ -26,26 +24,17 @@
             .section
             { 
                 position: relative;
-                min-height: 750px;
+                min-height: 750px;               
+                --menu-color: var(--grey);
+                --text-color: var(--dark-grey);
             }
             .menu
             {
                 font-family: 'NexaLight';
+                color: var(--menu-color);
+                fill: var(--menu-color);
             }
-            .home
-            {
-                background-image: url("images/background.jpg");
-                background-repeat: no-repeat;
-                background-position: top;
-                background-size: 1920px auto;
-                color: white;
-                fill: white;
-            }
-
-            .home .menu
-            {
-                font-family: 'PT Sans', sans-serif;
-            }
+            
             .content
             {
                 display: grid;
@@ -55,24 +44,14 @@
                 margin: 68px auto;
                 gap: 5vw;
                 width: 84vw;
-                color: var(--dark-grey);
                 padding-bottom: 300px;
+                color: var(--text-color);
+                fill: var(--text-color);
             }
             .content p
             {
                 line-height: 2;
             }
-            
-
-
-
-            .centered
-            {
-                position: relative;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
 
             .scroll-down
             {
@@ -80,7 +59,26 @@
                 font-size: 12px;
             }
 
+
+
+            .home
+            {
+                background-image: url("images/background.jpg");
+                background-repeat: no-repeat;
+                background-position: top;
+                background-size: 1920px auto;
+                --menu-color: white;
+                --text-color: white;
+            }
+
+            .home .menu
+            {
+                font-family: 'PT Sans', sans-serif;
+            }
+
            
+
+
             @media screen and (max-width: 1200px) 
             {
                 .content
@@ -101,6 +99,11 @@
                 .section
                 {
                     min-height: 0px;
+                }
+
+                :not(.home) .menu > *
+                {
+                    display: none;
                 }
             }
 
