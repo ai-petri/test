@@ -39,7 +39,7 @@
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
-                width: max(93vw, 600px);
+                width: 93vw;
                 height: 1px;
                 background-color: var(--foreground-color);
             }
@@ -66,7 +66,8 @@
             {
                 font-family: 'OpenSans', sans-serif;
                 font-size: 12px;
-                
+                color: var(--foreground-color);
+                fill: var(--foreground-color);
             }
 
 
@@ -88,9 +89,10 @@
 
            
 
-
+            /* tablet */
             @media screen and (max-width: 1200px) 
             {
+                /* одна колонка */
                 .content
                 {
                     display: block;
@@ -101,40 +103,56 @@
                 {
                     margin: 3vw;
                 }
-            }
+
+                /* линия во всю ширину экрана */
+                .line
+                {
+                    width: 100%;
+                }
+
+                /* нет стрелочки в home */
+                .home .scroll-down
+                {
+                    display: none;
+                }
+                .home .line
+                {
+                    width: max(93vw, 650px);
+                }             
+            } 
 
 
             /* mobile */
-            @media screen and (max-width: 600px)
+            @media screen and (max-width: 650px)
             {
                 .section
                 {
                     min-height: 0px;
                 }
 
-                :not(.home) .menu > *
+                .menu
                 {
                     display: none;
                 }
-            }
 
+                .home .menu
+                {
+                    display: block;
+                }
+                .home .line
+                {
+                    display: none;
+                }
 
-            /* tablet */
-            @media screen and (max-width: 700px) 
-            {
                 h2
                 {
                     font-size: 24px;
                 }
                 .content img
                 {
-                    width: 700px;
+                    width: 650px;
                     position: relative;
                     left: 50%;
                     transform: translateX(-50%);
-                }
-                .line
-                {
-                    width: 100%;
                 }
             }

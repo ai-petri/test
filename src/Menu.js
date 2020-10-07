@@ -24,14 +24,17 @@ function Menu(props)
         textDecoration: "none",
         margin: "40px 30px",
         fontSize: "20px",
-        color: "unset"
-    }
+        color: "unset",
+        display: "inline-block",
+        cursor: "pointer"
+    };
+
     
     var menu1 = links.map((link,index)=><a key={index}  href={"#"+(index+1)} style={linkStyle}> {link.toUpperCase()} </a>);
 
     var menu2 = <span style={linkStyle}>&infin;Menu</span>;
 
-    var menu = width>600? menu1 : menu2;
+    var menu = width>650? menu1 : menu2;
 
     var navStyle1 = 
     {
@@ -44,10 +47,12 @@ function Menu(props)
         display: "block"
     }
 
-    var navStyle = width>600? navStyle1 : navStyle2;
+    var navStyle = width>650? navStyle1 : navStyle2;
 
 
-    return <nav className="menu" style={navStyle}>{menu}</nav>
+    return <div className="menu">
+    <nav style={navStyle}>{menu}</nav>
+    </div>
 
 }
 
