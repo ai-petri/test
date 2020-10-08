@@ -23,6 +23,7 @@
 
             .section
             { 
+                overflow: hidden;
                 position: relative;
                 min-height: 750px;               
                 --foreground-color: var(--grey);
@@ -85,6 +86,7 @@
             .home .menu
             {
                 font-family: 'PT Sans', sans-serif;
+                animation: none !important;
             }
 
            
@@ -92,6 +94,18 @@
             {
                 from {height: 0px}
                 to {height: 300px}
+            }
+
+            @keyframes show 
+            {
+                from
+                {
+                    transform: translateY(-100%);
+                }
+                to
+                {
+                    transform: translateY(0%);
+                }
             }
 
             .open
@@ -106,6 +120,14 @@
                 height: 0px;
             }
 
+            .visible
+            {
+                animation: show 0.5s;
+            }
+            .hidden
+            {
+                transform: translateY(-100%);
+            }
             /* tablet */
             @media screen and (max-width: 1200px) 
             {
@@ -152,11 +174,19 @@
                     display: none;
                 }
 
+                .home
+                {
+                    min-height: 266px;
+                }
                 .home .menu
                 {
                     display: block;
                 }
                 .home .line
+                {
+                    display: none;
+                }
+                .home .content
                 {
                     display: none;
                 }

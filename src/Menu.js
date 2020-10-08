@@ -8,18 +8,52 @@ function Menu(props)
 
     var [width, setWidth] = React.useState(innerWidth);
     var [closed, setClosed] = React.useState(true);
+    var [visible, setVisible] = React.useState(true);
 
+
+    var menuRef = React.useRef();
+
+    var y = 0;
     React.useEffect(()=>
     {
-        function handleResize()
+        y = menuRef.current.getBoundingClientRect().y;
+        if(y>600)
         {
-            setWidth(innerWidth);
+            setVisible(false);
         }
-        addEventListener("resize", handleResize);
 
-        return () => removeEventListener("resize", handleResize);
-        
-    }, []);
+        addEventListener("resize", handleResize);
+        addEventListener("scroll", handleScroll);
+
+        return () =>
+        {
+            removeEventListener("resize", handleResize);
+            removeEventListener("scroll", handleScroll);
+        } 
+
+    },[])
+
+    function handleResize()
+    {
+        setWidth(innerWidth);
+        handleScroll();
+    }
+
+    function handleScroll()
+    {
+        var currentY = menuRef.current.getBoundingClientRect().y;
+        if(currentY<=y && currentY<500) 
+        {
+            setVisible(true);
+        }
+        if(currentY>y && currentY>600)
+        {
+            setVisible(false);
+        }
+        y = currentY;
+    }
+
+
 
     var linkStyle = {
         textDecoration: "none",
@@ -46,7 +80,7 @@ function Menu(props)
         setClosed(c=>!c);
     }
 
-    return <div className="menu">
+    return <div ref={menuRef} className={visible?"visible menu":"hidden menu"}>
     <nav style={navStyle}>{menu}</nav>
     </div>
 
