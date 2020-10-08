@@ -88,6 +88,23 @@
             }
 
            
+            @keyframes open 
+            {
+                from {height: 0px}
+                to {height: 300px}
+            }
+
+            .open
+            {
+                overflow: hidden;
+                height: 300px;
+                animation: open 0.5s;
+            }
+            .closed
+            {
+                overflow: hidden;
+                height: 0px;
+            }
 
             /* tablet */
             @media screen and (max-width: 1200px) 

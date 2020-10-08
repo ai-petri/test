@@ -7,6 +7,7 @@ function Menu(props)
     var links = ["home", "about me", "portfolio", "contact"];
 
     var [width, setWidth] = React.useState(innerWidth);
+    var [closed, setClosed] = React.useState(true);
 
     React.useEffect(()=>
     {
@@ -25,30 +26,25 @@ function Menu(props)
         margin: "40px 30px",
         fontSize: "20px",
         color: "unset",
-        display: "inline-block",
-        cursor: "pointer"
+        display: "block",
     };
 
     
     var menu1 = links.map((link,index)=><a key={index}  href={"#"+(index+1)} style={linkStyle}> {link.toUpperCase()} </a>);
 
-    var menu2 = <span style={linkStyle}>&infin;Menu</span>;
+    var menu2 = <>
+    <span style={{margin: "40px 30px", fontSize: "20px", display: "inline-block", cursor: "pointer"}} onClick={()=>toggleMenu()}>&infin;Menu</span>
+    <div className={closed?"closed":"open"}>{menu1}</div>
+    </>
 
     var menu = width>650? menu1 : menu2;
 
-    var navStyle1 = 
+    var navStyle = width>650? {display: "flex", justifyContent: "center"} : {display: "block"};
+
+    function toggleMenu()
     {
-        display: "flex",
-        justifyContent: "center" 
+        setClosed(c=>!c);
     }
-
-    var navStyle2 =
-    {
-        display: "block"
-    }
-
-    var navStyle = width>650? navStyle1 : navStyle2;
-
 
     return <div className="menu">
     <nav style={navStyle}>{menu}</nav>
